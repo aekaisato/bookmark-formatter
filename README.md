@@ -11,7 +11,7 @@ Uh...I dunno.
 Each folder/subfolder (besides the root) must contain a `__meta.yaml` file (that's 2 underscores), with at the very least a `name` tag at the top level, assigned to a string. This allows you to name the folder whatever you want--the name of the folder when you import it will be `name`. Files (which must have the extension `.yaml`) must contain `name` and `url` tags. (In the future, more tag support will be added.) An example is in the `example` folder.
 
 ### How do you use it?
-Although I will add an actual CLI in the future, for now you'd use `racket [path/to/testfile.rkt] [path/to/bookmarks/root] [path/to/format/file]`, without brackets. The format file, for now, is `ff-format.html`
+Although I will add an actual CLI in the future, for now you'd use `racket [path/to/testfile.rkt] [path/to/bookmarks/root] [path/to/format/file]`, without brackets. The format file, for now, is `ff-format.html`. Make sure to install dependencies (you can do this simply with `raco pkg install --batch ./bm-fmt-deps`, if you're currently in the root directory of this project).
 
 ### Can I create my own format files?
 Yes! In order to do so, use the tag `<bm-fmt> / </bm-fmt>` to denote that start/end of where the bookmarks should go (you must include both). You also need `<fo-fmt> / </fo-fmt>` and `<fi-fmt> / </fi-fmt>` tags *both nested within* the bm-fmt element. Inside fo-fmt and fi-fmt (which stand for "folder format" and "file format", respectively), you can add placeholders using `$` like `$name` and `$url` to match tags in your yaml files. (See `ff-format.html` for an example.)
