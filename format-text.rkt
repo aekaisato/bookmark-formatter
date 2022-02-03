@@ -26,7 +26,7 @@
   (define fo-fmt (substring bm-fmt (+ fo-start-index (string-length FO-FMT-START)) fo-end-index))
   (define fi-fmt (substring bm-fmt (+ fi-start-index (string-length FI-FMT-START)) fi-end-index))
 
-  (string-replace f (substring f start-index end-index) (format-bm fo-fmt fi-fmt h)))
+  (string-replace f (substring f start-index (+ end-index (string-length FMT-END))) (format-bm fo-fmt fi-fmt h)))
 
 (define (format-bm fo-fmt fi-fmt h [s ""])
   (cond
