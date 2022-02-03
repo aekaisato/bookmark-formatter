@@ -8,7 +8,7 @@ It takes a folder of yaml files and parses it to allow you to import everything 
 Uh...I dunno.
 
 ### What's the format?
-Each folder/subfolder must contain a `__meta.yaml` file (that's 2 underscores), with at the very least a `name` tag at the top level, assigned to a string. This allows you to name the folder whatever you want--the name of the folder when you import it will be `name`. Files (which must have the extension `.yaml`) must contain `name` and `url` tags. (In the future, more tag support will be added.) An example is in the `example` folder.
+Each folder/subfolder (besides the root) must contain a `__meta.yaml` file (that's 2 underscores), with at the very least a `name` tag at the top level, assigned to a string. This allows you to name the folder whatever you want--the name of the folder when you import it will be `name`. Files (which must have the extension `.yaml`) must contain `name` and `url` tags. (In the future, more tag support will be added.) An example is in the `example` folder.
 
 ### How do you use it?
 Although I will add an actual CLI in the future, for now you'd use `racket [path/to/testfile.rkt] [path/to/bookmarks/root] [path/to/format/file]`, without brackets. The format file, for now, is `ff-format.html`
